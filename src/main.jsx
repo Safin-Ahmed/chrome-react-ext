@@ -24,7 +24,6 @@ chrome.runtime.onMessage.addListener((req, sender, res) => {
 });
 
 document.body.append(root);
-
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <App />

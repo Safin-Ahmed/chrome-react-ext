@@ -5,10 +5,23 @@ let isInitial = true;
 function App() {
   const [count, setCount] = useState(0);
 
+  const onStorageUpdate = (e) => {
+    const { key, newValue } = e;
+    if (key === "count") {
+      setCount(newValue);
+    }
+  };
+
   useEffect(() => {
     const storageCount = localStorage.getItem("count");
     const countData = JSON.parse(storageCount);
     setCount(countData ? countData : 0);
+
+    window.addEventListener("storage", onStorageUpdate);
+
+    return () => {
+      window.removeEventListener("storage", onStorageUpdate);
+    };
   }, []);
 
   useEffect(() => {
