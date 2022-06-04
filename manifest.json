@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "React Counter Extension",
+  "version": "1.0",
+  "action": {},
+  "icons": {
+    "16": "icon16.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/main.jsx"],
+      "matches": ["https://*/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "./src/background.js"
+  },
+  "permissions": ["tabs"]
+}

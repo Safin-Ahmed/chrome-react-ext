@@ -1,0 +1,18 @@
+#crx-root {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  transform: translate(-100%, 0);
+  z-index: 999;
+}
+
+#crx-root button {
+  background-color: black !important;
+  border-color: #fff;
+  border-image: initial;
+  border-style: outset;
+  border-width: 2px;
+  margin: 0;
+  padding: 1px 15px;
+  cursor: pointer;
+}
